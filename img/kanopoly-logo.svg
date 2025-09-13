@@ -1,0 +1,22 @@
+<svg width="200" height="58" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="58" fill="#2c3e50" rx="5" ry="5"/>
+  
+  <!-- Letter K -->
+  <path d="M30 15 L30 43 L40 43 L40 35 L48 43 L58 43 L45 30 L58 15 L48 15 L40 23 L40 15 Z" fill="#3498db"/>
+  
+  <!-- Letter P -->
+  <path d="M70 15 L70 43 L80 43 L80 28 L90 28 L90 43 L100 43 L100 15 L90 15 L90 23 L80 23 L80 15 Z" fill="#3498db"/>
+  
+  <!-- Letter O -->
+  <circle cx="120" cy="29" r="7" fill="none" stroke="#3498db" stroke-width="3"/>
+  
+  <!-- Letter L -->
+  <path d="M140 15 L140 43 L150 43 L150 20 L155 20 L155 15 Z" fill="#3498db"/>
+  
+  <!-- Letter Y -->
+  <path d="M165 15 L165 25 L170 25 L170 43 L180 43 L180 25 L185 25 L185 15 L177.5 20 Z" fill="#3498db"/>
+  
+  <!-- Text -->
+  <text x="30" y="52" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">KANOPLY</text>
+</svg>

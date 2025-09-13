@@ -1,0 +1,43 @@
+<?php
+include('dbcon.php');
+
+// Create student table
+$sql = "CREATE TABLE IF NOT EXISTS `student` (
+  `studentID` int(11) NOT NULL AUTO_INCREMENT,
+  `Student_No` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `MiddleName` varchar(50) NOT NULL,
+  `Sex` varchar(10) NOT NULL,
+  `Date_of_Birth` varchar(50) NOT NULL,
+  `birth_place` varchar(100) NOT NULL,
+  `civil_status` varchar(50) NOT NULL,
+  `citizenship` varchar(50) NOT NULL,
+  `height` varchar(3) NOT NULL,
+  `weight` varchar(5) NOT NULL,
+  `blood_type` varchar(10) NOT NULL,
+  `Residential_Address` varchar(100) NOT NULL,
+  `ZIP_CODE` varchar(20) NOT NULL,
+  `Telephone_NO` varchar(20) NOT NULL,
+  `Email_Address` varchar(100) NOT NULL,
+  `Cellphone_NO` varchar(15) NOT NULL,
+  `Grade_Level` varchar(50) NOT NULL,
+  `Section` varchar(50) NOT NULL,
+  `School_Year` varchar(50) NOT NULL,
+  `Admission_Date` varchar(50) NOT NULL,
+  `Guardian_Name` varchar(100) NOT NULL,
+  `Guardian_Relationship` varchar(50) NOT NULL,
+  `Guardian_Address` varchar(100) NOT NULL,
+  `Guardian_Contact` varchar(20) NOT NULL,
+  `location` varchar(200) NOT NULL,
+  PRIMARY KEY (`studentID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Student table created successfully";
+} else {
+    echo "Error creating student table: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>

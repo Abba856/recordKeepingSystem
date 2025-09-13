@@ -1,0 +1,437 @@
+/* Clean and Professional PRMS Styling */
+
+/* Color Variables */
+:root {
+  --primary: #2c3e50;
+  --primary-dark: #1a2530;
+  --secondary: #3498db;
+  --secondary-dark: #2980b9;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --border: #dee2e6;
+  --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-lg: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+body {
+  padding-top: 1rem;
+}
+
+/* Header Styles */
+.navbar-fixed-top {
+  background: var(--primary);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  padding: 0.5rem 0;
+}
+
+.navbar-inner {
+  background: transparent;
+  border: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.marg_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.brand h2 {
+  color: white;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.chmsc_nav {
+  color: #bdc3c7 !important;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.pull-right {
+  color: white;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.pull-right p {
+  margin: 0.25rem 0 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.navbar-fixed-top1 {
+  background: white;
+  box-shadow: var(--shadow);
+  margin-top: 120px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin: 0;
+}
+
+.nav li a {
+  color: var(--dark);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+.nav li a:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.nav li.active a {
+  background: var(--primary);
+  color: white;
+}
+
+.navbar-search {
+  margin: 0 1rem;
+}
+
+.navbar-search .search-query {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.navbar-search .search-query:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  outline: none;
+  width: 250px;
+}
+
+/* Main Content */
+.wrapper {
+  max-width: 1200px;
+  margin: 140px auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.hero-body,
+.hero-body-emp,
+.hero-body-add {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.peace {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+#piecemaker {
+  background: var(--light-gray);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+#piecemaker p {
+  color: var(--gray);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#piecemaker img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow);
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  background: var(--primary);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* Utility Classes */
+.mt-20 {
+  margin-top: 1.25rem;
+}
+
+.mb-20 {
+  margin-bottom: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+/* Modals */
+.modal {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  background: var(--primary);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.25rem 1.5rem;
+  border: none;
+}
+
+.modal-header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.5rem;
+  background: var(--light);
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: none;
+  justify-content: flex-end;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Alerts */
+.alert {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+}
+
+.alert-info {
+  background: var(--primary);
+  color: white;
+}
+
+.alert-info h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--light-gray);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .nav li a {
+    width: 100%;
+    justify-content: center;
+    margin: 0.125rem 0;
+  }
+  
+  .navbar-search {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  
+  .navbar-search .search-query {
+    width: 100%;
+  }
+  
+  .wrapper {
+    margin: 160px auto 1rem auto;
+    padding: 0.5rem;
+  }
+  
+  .hero-body,
+  .hero-body-emp,
+  .hero-body-add {
+    padding: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-body p {
+    font-size: 1rem;
+  }
+  
+  #piecemaker {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+  
+  .modal-header {
+    padding: 1rem 1.25rem;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .modal-body {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .modal-footer {
+    padding: 1rem 1.25rem;
+  }
+}
