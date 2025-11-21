@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="input01">Grade Level:</label>
+                                <label class="control-label" for="input01">Level:</label>
                                 <div class="controls">
                                     <select name="Grade_Level" class="input-xlarge" required>
                                         <option>Grade 1</option>

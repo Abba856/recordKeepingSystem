@@ -1,20 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 5.2.3-1.fc42
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 16, 2013 at 11:24 AM
--- Server version: 5.1.36
--- PHP Version: 5.3.0
+-- Generation Time: Nov 21, 2025 at 03:59 PM
+-- Server version: 10.11.11-MariaDB
+-- PHP Version: 8.4.14
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `hrms`
@@ -26,8 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `employee`
 --
 
-CREATE TABLE IF NOT EXISTS `employee` (
-  `employeeID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `employee` (
+  `employeeID` int(11) NOT NULL,
   `Position` varchar(50) NOT NULL,
   `salary_grade` int(11) NOT NULL,
   `step` int(11) NOT NULL,
@@ -71,9 +72,8 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `Employee_No` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
   `Classification` varchar(100) NOT NULL,
-  `District` varchar(100) NOT NULL,
-  PRIMARY KEY (`employeeID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=174 ;
+  `District` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `employee`
@@ -101,7 +101,6 @@ INSERT INTO `employee` (`employeeID`, `Position`, `salary_grade`, `step`, `LastN
 (116, 'TEACHER I', 0, 2, 'ILIGAN', 'JUDITO', 'RODRIGUEZ', 'Male', '04/03/1982', '', '', '', 0, 'Eustaquio Lopez NHS', 'upload/', '', '', '', '', '', '', '', '', '', '205188', '207816', 'P', 'LET', '', '', '', '', '', '', '', '', '', '', '2667', 'M', 'A.03.e.09.b.16.c.05', '', 'Bachelor with units', 'Teaching', ''),
 (117, 'TEACHER I', 0, 1, 'TOLENTINO', 'MILALYN', 'BELLENES', 'Female', '06/06/1973', '', '', '', 0, 'Doña Angeles J. Montinola MHS', 'upload/', '', '', '', '', '', '', '', '', '', '205188', '207816', 'P', 'LET', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-TCH1-420010-2008', '2667', 'M', 'A.03.e.09.b.16.c.08', '', 'Masteral', 'Teaching', ''),
 (118, 'HEAD TEACHER VI', 0, 2, 'DOLOSO', 'MARK', 'BOOT', 'Male', '10/21/1983', '', '', '', 0, 'Doña Angeles J. Montinola MHS', 'upload/', '', '', '', '', '', '', '', '', '', '205188', '207816', 'P', 'LET', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-TCH1-420011-2008', '2667', 'M', 'A.03.e.09.b.16.c.08', '', 'Bachelor with units', 'Teaching', ''),
-(119, 'TEACHER I', 0, 2, 'JUEN', 'ANNIE', 'ENCARGUES', 'Female', '', '', '', '', 0, 'Doña Angeles J. Montinola MHS', 'upload/Dock.jpg', '', '', '', '', '', '', '', '', '', '205188', '207816', 'P', 'LET', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-SP1-420994-2011', '2667', 'M', 'A.03.e.09.b.16.c.08', '', 'Bachelors Degree', 'Teaching', ''),
 (120, 'SCHOOL PRINCIPAL I', 0, 2, 'HERMOSURA ', 'WILFREDO ', 'ORASUME ', 'Male', '04/05/1956 ', '', '***134294668000*** ', '', 0, 'Doña Montserrat Lopez Memorial HS', 'upload/', '', '', '', '', '', '', '', '', '', '453,744 ', '459,720 ', 'P', 'PBET ', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-SP4-420045-2010 ', '2667 ', 'M', 'A.03.e.09.b.16.c.02 ', '', 'Masteral', 'Teaching', ''),
 (121, 'HEAD TEACHER VI', 0, 3, 'BITALAC ', 'MALUZ', 'CHAVEZ', 'Female', '08/06/1956 ', 'Silay City', '134294016000 ', '', 0, 'Doña Montserrat Lopez Memorial HS', 'upload/', '', '', 'Married', 'Filipino', '', '787654332345', '098123467', '657323899', '08876543321', '365,688 ', '370,560 ', 'P', 'PBET', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-HTEACH6-420001-2005 ', '2667', 'M', 'A.03.e.09.b.16.c.02 ', '', 'Bachelor', 'Teaching', ''),
 (122, 'HEAD TEACHER VI', 0, 4, 'BENEDICTO ', 'NANETH', 'LINGA', 'Female', '10/15/1960 ', '', '***134293935000*** ', '', 0, 'Doña Montserrat Lopez Memorial HS', 'upload/', '', '', 'Married', 'Filipino', 'TYPE O', '98765543121', '5787932134', '087654234567', '0753125689', '365,688 ', '380,532 ', 'P', 'PBET ', '', '', '', '', '', '', '', '', '', 'OSEC-DECSB-HTEACH6-420001-2001 ', '2667', 'M', 'A.03.e.09.b.16.c.02 ', '', 'Bachelor', 'Teaching', ''),
@@ -155,14 +154,13 @@ INSERT INTO `employee` (`employeeID`, `Position`, `salary_grade`, `step`, `LastN
 -- Table structure for table `history`
 --
 
-CREATE TABLE IF NOT EXISTS `history` (
-  `history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `history` (
+  `history_id` int(11) NOT NULL,
   `date` varchar(50) NOT NULL,
   `action` varchar(50) NOT NULL,
   `user` varchar(100) NOT NULL,
-  `data` varchar(50) NOT NULL,
-  PRIMARY KEY (`history_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=274 ;
+  `data` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `history`
@@ -441,7 +439,39 @@ INSERT INTO `history` (`history_id`, `date`, `action`, `user`, `data`) VALUES
 (270, '2013-02-03 16:07:31', 'Login', 'Admin', 'admin admin'),
 (271, '2013-02-03 16:10:46', 'Logout', 'Admin', 'admin admin'),
 (272, '2013-02-03 17:15:17', 'Login', 'Admin', 'admin admin'),
-(273, '2013-02-03 17:36:51', 'Login', 'User', ' ');
+(273, '2013-02-03 17:36:51', 'Login', 'User', ' '),
+(274, '2025-10-28 14:34:15', 'Login', 'Admin', 'admin admin'),
+(275, '2025-10-29 14:08:31', 'Login', 'Admin', 'admin admin'),
+(276, '2025-10-30 17:50:48', 'Login', 'Admin', 'admin admin'),
+(277, '2025-11-06 11:50:45', 'Login', 'Admin', 'admin admin'),
+(278, '2025-11-21 14:19:33', 'Login', 'Admin', 'admin admin'),
+(279, '2025-11-21 14:19:52', 'Logout', 'Admin', 'admin admin'),
+(280, '2025-11-21 14:25:53', 'Login', 'Admin', 'admin admin'),
+(281, '2025-11-21 14:26:16', 'Logout', 'Admin', 'admin admin'),
+(282, '2025-11-21 14:27:41', 'Login', 'Admin', 'admin admin'),
+(283, '2025-11-21 14:28:23', 'Logout', 'Admin', 'admin admin'),
+(284, '2025-11-21 14:34:06', 'Login', 'Admin', 'admin admin'),
+(285, '2025-11-21 14:38:13', 'Logout', 'Admin', 'admin admin'),
+(286, '2025-11-21 14:40:07', 'Login', 'Admin', 'admin admin'),
+(287, '2025-11-21 14:40:55', 'Logout', 'Admin', 'admin admin'),
+(288, '2025-11-21 14:44:17', 'Login', 'Admin', 'admin admin'),
+(289, '2025-11-21 14:44:50', 'Logout', 'Admin', 'admin admin'),
+(290, '2025-11-21 14:45:20', 'Login', 'Admin', 'admin admin'),
+(291, '2025-11-21 15:12:21', 'Delete Employee', 'Admin', 'JUEN '),
+(292, '2025-11-21 15:16:36', 'Logout', 'Admin', 'admin admin'),
+(293, '2025-11-21 15:16:41', 'Login', 'Admin', 'admin admin'),
+(294, '2025-11-21 15:24:53', 'Logout', 'Admin', 'admin admin'),
+(295, '2025-11-21 16:14:27', 'Login', 'Admin', 'admin admin'),
+(296, '2025-11-21 16:20:01', 'Logout', 'Admin', 'admin admin'),
+(297, '2025-11-21 16:20:07', 'Login', 'Admin', 'admin admin'),
+(298, '2025-11-21 16:26:33', 'Logout', 'Admin', 'admin admin'),
+(299, '2025-11-21 16:27:04', 'Login', 'Admin', 'admin admin'),
+(300, '2025-11-21 16:27:11', 'Logout', 'Admin', 'admin admin'),
+(301, '2025-11-21 16:27:27', 'Login', 'Admin', 'admin admin'),
+(302, '2025-11-21 16:29:26', 'Logout', 'Admin', 'admin admin'),
+(303, '2025-11-21 16:29:53', 'Login', 'Admin', 'admin admin'),
+(304, '2025-11-21 16:31:39', 'Logout', 'Admin', 'admin admin'),
+(305, '2025-11-21 16:32:12', 'Login', 'Admin', 'admin admin');
 
 -- --------------------------------------------------------
 
@@ -449,28 +479,24 @@ INSERT INTO `history` (`history_id`, `date`, `action`, `user`, `data`) VALUES
 -- Table structure for table `leave_record`
 --
 
-CREATE TABLE IF NOT EXISTS `leave_record` (
-  `leave_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `leave_record` (
+  `leave_id` int(11) NOT NULL,
   `employeeID` int(11) NOT NULL,
   `No_of_Days` int(5) NOT NULL,
   `No_of_Days_approved` int(5) NOT NULL,
   `from_date` varchar(100) NOT NULL,
-  `to_date` varchar(100) NOT NULL,
-  PRIMARY KEY (`leave_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+  `to_date` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `leave_record`
 --
 
 INSERT INTO `leave_record` (`leave_id`, `employeeID`, `No_of_Days`, `No_of_Days_approved`, `from_date`, `to_date`) VALUES
-(16, 119, 10, 10, '01/10/2013', '01/30/2013'),
-(17, 119, 10, 5, '01/01/2013', '01/24/2013'),
 (18, 136, 10, 7, '01/08/2013', '01/30/2013'),
 (24, 166, 5, 5, '02/04/2013', '02/11/2013'),
 (20, 107, 7, 5, '06/18/2013', '06/26/2013'),
-(22, 123, 5, 5, '03/29/2010', '06/20/2011'),
-(23, 119, 3, 3, '10/10/2012', '01/15/2013');
+(22, 123, 5, 5, '03/29/2010', '06/20/2011');
 
 -- --------------------------------------------------------
 
@@ -478,11 +504,10 @@ INSERT INTO `leave_record` (`leave_id`, `employeeID`, `No_of_Days`, `No_of_Days_
 -- Table structure for table `position`
 --
 
-CREATE TABLE IF NOT EXISTS `position` (
-  `position_id` int(11) NOT NULL AUTO_INCREMENT,
-  `position` varchar(100) NOT NULL,
-  PRIMARY KEY (`position_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+CREATE TABLE `position` (
+  `position_id` int(11) NOT NULL,
+  `position` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `position`
@@ -502,13 +527,10 @@ INSERT INTO `position` (`position_id`, `position`) VALUES
 (12, 'ACCOUNTANT I '),
 (13, 'TEACHER II '),
 (14, 'GUIDANCE COUNSELOR I'),
-(15, 'TEACHER I '),
 (16, 'ADMINISTRATIVE OFFICER I '),
 (17, 'ADMINISTRATIVE ASSISTANT II'),
 (18, 'ADMINISTRATIVE AIDE IV'),
 (19, 'ADMINISTRATIVE AIDE III'),
-(20, 'SECURITY GUARD I '),
-(21, 'ADMINISTRATIVE AIDE I -'),
 (23, 'SCHOOL PRINCIPAL I ');
 
 -- --------------------------------------------------------
@@ -517,11 +539,10 @@ INSERT INTO `position` (`position_id`, `position`) VALUES
 -- Table structure for table `qualification`
 --
 
-CREATE TABLE IF NOT EXISTS `qualification` (
-  `qualification_id` int(11) NOT NULL AUTO_INCREMENT,
-  `qualification` varchar(100) NOT NULL,
-  PRIMARY KEY (`qualification_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+CREATE TABLE `qualification` (
+  `qualification_id` int(11) NOT NULL,
+  `qualification` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `qualification`
@@ -541,11 +562,10 @@ INSERT INTO `qualification` (`qualification_id`, `qualification`) VALUES
 -- Table structure for table `school`
 --
 
-CREATE TABLE IF NOT EXISTS `school` (
-  `school_id` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  PRIMARY KEY (`school_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+CREATE TABLE `school` (
+  `school_id` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `school`
@@ -574,8 +594,8 @@ INSERT INTO `school` (`school_id`, `Name`) VALUES
 -- Table structure for table `service_credits`
 --
 
-CREATE TABLE IF NOT EXISTS `service_credits` (
-  `service_credits_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `service_credits` (
+  `service_credits_id` int(11) NOT NULL,
   `from_date` varchar(100) NOT NULL,
   `to_date` varchar(100) NOT NULL,
   `LE_vacation` int(11) NOT NULL,
@@ -585,9 +605,8 @@ CREATE TABLE IF NOT EXISTS `service_credits` (
   `B_vacation` int(11) NOT NULL,
   `B_sick` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `employeeID` int(11) NOT NULL,
-  PRIMARY KEY (`service_credits_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+  `employeeID` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `service_credits`
@@ -611,8 +630,8 @@ INSERT INTO `service_credits` (`service_credits_id`, `from_date`, `to_date`, `LE
 -- Table structure for table `service_record`
 --
 
-CREATE TABLE IF NOT EXISTS `service_record` (
-  `service_record_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `service_record` (
+  `service_record_id` int(11) NOT NULL,
   `employeeID` int(11) NOT NULL,
   `from_date` varchar(100) NOT NULL,
   `to_date` varchar(100) NOT NULL,
@@ -621,9 +640,8 @@ CREATE TABLE IF NOT EXISTS `service_record` (
   `salary` varchar(50) NOT NULL,
   `station_place` varchar(100) NOT NULL,
   `branch` varchar(100) NOT NULL,
-  `Remarks` varchar(50) NOT NULL,
-  PRIMARY KEY (`service_record_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+  `Remarks` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `service_record`
@@ -646,18 +664,62 @@ INSERT INTO `service_record` (`service_record_id`, `employeeID`, `from_date`, `t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `studentID` int(11) NOT NULL,
+  `Student_No` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `MiddleName` varchar(50) NOT NULL,
+  `Sex` varchar(10) NOT NULL,
+  `Date_of_Birth` varchar(50) NOT NULL,
+  `birth_place` varchar(100) NOT NULL,
+  `civil_status` varchar(50) NOT NULL,
+  `citizenship` varchar(50) NOT NULL,
+  `height` varchar(3) NOT NULL,
+  `weight` varchar(5) NOT NULL,
+  `blood_type` varchar(10) NOT NULL,
+  `Residential_Address` varchar(100) NOT NULL,
+  `ZIP_CODE` varchar(20) NOT NULL,
+  `Telephone_NO` varchar(20) NOT NULL,
+  `Email_Address` varchar(100) NOT NULL,
+  `Cellphone_NO` varchar(15) NOT NULL,
+  `Grade_Level` varchar(50) NOT NULL,
+  `Section` varchar(50) NOT NULL,
+  `School_Year` varchar(50) NOT NULL,
+  `Admission_Date` varchar(50) NOT NULL,
+  `Guardian_Name` varchar(100) NOT NULL,
+  `Guardian_Relationship` varchar(50) NOT NULL,
+  `Guardian_Address` varchar(100) NOT NULL,
+  `Guardian_Contact` varchar(20) NOT NULL,
+  `location` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`studentID`, `Student_No`, `LastName`, `FirstName`, `MiddleName`, `Sex`, `Date_of_Birth`, `birth_place`, `civil_status`, `citizenship`, `height`, `weight`, `blood_type`, `Residential_Address`, `ZIP_CODE`, `Telephone_NO`, `Email_Address`, `Cellphone_NO`, `Grade_Level`, `Section`, `School_Year`, `Admission_Date`, `Guardian_Name`, `Guardian_Relationship`, `Guardian_Address`, `Guardian_Contact`, `location`) VALUES
+(1, 'STU001', 'Test', 'John', 'Michael', 'Male', '2000-01-15', 'Test City', 'Single', 'Citizen', '175', '70', 'O+', '123 Test Street', '12345', '555-1234', 'john.test@example.com', '555-5678', 'Grade 10', 'A', '2025-2026', '2025-11-21', 'Jane Test', 'Mother', '123 Test Street', '555-9999', 'img/default-avatar.png'),
+(2, 'STU002', 'Smith', 'Jane', 'Elizabeth', 'Female', '2001-03-22', 'Sample City', 'Single', 'Citizen', '165', '55', 'A+', '456 Sample Ave', '54321', '555-5678', 'jane.smith@example.com', '555-8765', 'Grade 11', 'B', '2025-2026', '2025-11-21', 'John Smith', 'Father', '456 Sample Ave', '555-4321', 'img/default-avatar.png'),
+(3, 'STU003', 'Johnson', 'Bob', 'Charles', 'Male', '2002-07-10', 'Another City', 'Single', 'Citizen', '180', '75', 'B+', '789 Another Blvd', '67890', '555-9012', 'bob.johnson@example.com', '555-2109', 'Grade 9', 'C', '2025-2026', '2025-11-21', 'Mary Johnson', 'Mother', '789 Another Blvd', '555-9876', 'img/default-avatar.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `User_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `User_id` int(11) NOT NULL,
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
-  `User_Type` varchar(50) NOT NULL,
-  PRIMARY KEY (`User_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `User_Type` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
@@ -666,6 +728,135 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`User_id`, `UserName`, `Password`, `FirstName`, `LastName`, `User_Type`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', 'Admin'),
 (4, 'user', 'user', 'user', 'user', 'User');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`employeeID`);
+
+--
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`history_id`);
+
+--
+-- Indexes for table `leave_record`
+--
+ALTER TABLE `leave_record`
+  ADD PRIMARY KEY (`leave_id`);
+
+--
+-- Indexes for table `position`
+--
+ALTER TABLE `position`
+  ADD PRIMARY KEY (`position_id`);
+
+--
+-- Indexes for table `qualification`
+--
+ALTER TABLE `qualification`
+  ADD PRIMARY KEY (`qualification_id`);
+
+--
+-- Indexes for table `school`
+--
+ALTER TABLE `school`
+  ADD PRIMARY KEY (`school_id`);
+
+--
+-- Indexes for table `service_credits`
+--
+ALTER TABLE `service_credits`
+  ADD PRIMARY KEY (`service_credits_id`);
+
+--
+-- Indexes for table `service_record`
+--
+ALTER TABLE `service_record`
+  ADD PRIMARY KEY (`service_record_id`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`studentID`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`User_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `employeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+
+--
+-- AUTO_INCREMENT for table `history`
+--
+ALTER TABLE `history`
+  MODIFY `history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=306;
+
+--
+-- AUTO_INCREMENT for table `leave_record`
+--
+ALTER TABLE `leave_record`
+  MODIFY `leave_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `position`
+--
+ALTER TABLE `position`
+  MODIFY `position_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `qualification`
+--
+ALTER TABLE `qualification`
+  MODIFY `qualification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `school`
+--
+ALTER TABLE `school`
+  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `service_credits`
+--
+ALTER TABLE `service_credits`
+  MODIFY `service_credits_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `service_record`
+--
+ALTER TABLE `service_record`
+  MODIFY `service_record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `studentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

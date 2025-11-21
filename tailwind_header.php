@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PRMS - Personnel Record Management System</title>
+    <title>RKMS - Record Keeping Management System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="img/dep2.jpg" rel="icon" type="image"> 
@@ -15,8 +15,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',
+                        secondary: '#3498db',
+                        success: '#27ae60',
+                        warning: '#f39c12',
+                        danger: '#e74c3c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap-carousel.js"></script>
@@ -43,6 +62,7 @@
             params, null);
 
     </script>
+
 
 
     <!----hover pop up -->
@@ -127,11 +147,11 @@
             oTable = jQuery('#passed').dataTable({
                 "bJQueryUI": true,
                 "sPaginationType": "full_numbers"
-            } );								
-
+            } );			
+			
             $('.carousel').carousel({
                 interval: 4000
-            })		
+            })			
 
         });		
     </script>
